@@ -1,34 +1,29 @@
-<link rel="manifest" href="/manifest.json">
-<link rel="icon" href="/icon-192.png">
-<meta name="theme-color" content="#080620">
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mera Bhavishya Pro</title>
+  <meta charset="utf-8" />
+  <title>Mera Bhavishya Pro</title>
 
-    <!-- Manifest (VERY IMPORTANT) -->
-    <link rel="manifest" href="/manifest.json">
+  <!-- 1) Manifest link — MUST -->
+  <link rel="manifest" href="/manifest.json">
 
-    <!-- Icons -->
-    <link rel="icon" href="/icon-192.png">
-    <link rel="apple-touch-icon" href="/icon-192.png">
-
-    <meta name="theme-color" content="#080620">
+  <!-- 2) Favicon / app icon -->
+  <link rel="icon" href="/icon-192.png">
+  <link rel="apple-touch-icon" href="/icon-192.png">
+  
+  <meta name="theme-color" content="#080620">
 </head>
 <body>
-<script>
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/service-worker.js')
-    .then(() => console.log("Service Worker Registered"))
-    .catch(err => console.log("SW Error:", err));
-}
-</script>
-<script>
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/service-worker.js')
-    .then(() => console.log("SW registered"))
-    .catch(err => console.log("SW registration failed:", err));
-}
-</script>
+  <!-- Aapka existing content yahan hoga -->
+  <!-- ... -->
+
+  <!-- 3) Service worker registration — bottom of body -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/service-worker.js')
+      .then(reg => console.log('SW registered', reg))
+      .catch(err => console.error('SW registration failed', err));
+    }
+  </script>
+</body>
+</html>
