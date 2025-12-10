@@ -3,7 +3,12 @@ const FILES = [
   '/index.html',
   '/horoscope.html',
   '/kundli.html',
-  '/matchmaking.html',
+  '/matchmaking.html',<script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/service-worker.js');
+}
+</script>
+
   '/tarot.html',
   '/numerology.html',
   '/ai-chat.html',
