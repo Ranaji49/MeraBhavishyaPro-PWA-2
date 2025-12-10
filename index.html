@@ -1,29 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <title>Mera Bhavishya Pro</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- 1) Manifest link — MUST -->
-  <link rel="manifest" href="/manifest.json">
+    <title>Mera Bhavishya Pro</title>
 
-  <!-- 2) Favicon / app icon -->
-  <link rel="icon" href="/icon-192.png">
-  <link rel="apple-touch-icon" href="/icon-192.png">
-  
-  <meta name="theme-color" content="#080620">
+    <!-- Manifest (VERY IMPORTANT) -->
+    <link rel="manifest" href="/manifest.json">
+
+    <!-- Icons -->
+    <link rel="icon" href="/icon-192.png">
+    <link rel="apple-touch-icon" href="/icon-192.png">
+
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#080620">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/style.css">
+
 </head>
 <body>
-  <!-- Aapka existing content yahan hoga -->
-  <!-- ... -->
 
-  <!-- 3) Service worker registration — bottom of body -->
-  <script>
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('/service-worker.js')
-      .then(reg => console.log('SW registered', reg))
-      .catch(err => console.error('SW registration failed', err));
-    }
-  </script>
+    <!-- Your existing page content -->
+    <header>
+        <h1>Mera Bhavishya Pro</h1>
+    </header>
+
+    <main>
+        <p>Welcome to Mera Bhavishya Pro</p>
+
+        <a href="horoscope.html">Daily Horoscope</a><br>
+        <a href="kundli.html">Kundli</a><br>
+        <a href="matchmaking.html">Matchmaking</a><br>
+        <a href="tarot.html">Tarot</a><br>
+        <a href="numerology.html">Numerology</a><br>
+        <a href="ai-chat.html">AI Astrology Chat</a>
+    </main>
+
+    <!-- Service Worker Registration (VERY IMPORTANT) -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/service-worker.js')
+                .then(reg => console.log("Service Worker Registered:", reg))
+                .catch(err => console.log("Service Worker Registration Failed:", err));
+        }
+    </script>
+
 </body>
 </html>
